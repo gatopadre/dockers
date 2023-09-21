@@ -1,0 +1,30 @@
+version: '3'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "9000:9000"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: contrasena_de_la_base_de_datos
+      MYSQL_DATABASE: nombre_de_la_base_de_datos
+      MYSQL_USER: usuario_de_la_base_de_datos
+      MYSQL_PASSWORD: contrasena_de_la_base_de_datos
+    ports:
+      - "3306:3306"

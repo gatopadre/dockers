@@ -1,0 +1,1386 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body style="
+background-color: rgb(245, 245, 245);
+box-sizing: border-box;
+color: rgb(33, 37, 41);
+font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+text-align: left">
+    <!-- header -->
+    <div id="header" style="width: 100%">
+        <div class="container py-4 mt-3" style="background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+        color: rgb(33, 37, 41);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-top: 16px;
+        max-width: 100%;
+        padding-bottom: 24px;
+        padding-top: 24px;
+        text-align: left;
+        width: 100%;">
+            <table style="font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            background-color: white;
+            width: 100%;">
+                <tr>
+                    <td>
+                        <img src="https://download-zones.s3.amazonaws.com/logo.png" alt="Logo" style="border-bottom-style: none;
+                    border-left-style: none;
+                    border-right-style: none;
+                    border-top-style: none;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    text-align: left;
+                    vertical-align: middle">
+                    </td>
+                    <td>
+                        <p style="box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    margin-bottom: 16px;
+                    margin-top: 0px;
+                    text-align: right">{{ now }}
+                        <br>
+                        <a href="mailto:soporte@instoreview.com" style="background-color: rgba(0, 0, 0, 0);
+                        box-sizing: border-box;
+                        color: rgb(0, 123, 255);
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 24px;
+                        text-align: right;
+                        text-decoration-color: rgb(0, 123, 255);
+                        text-decoration-line: none;
+                        text-decoration-style: solid;
+                        text-decoration-thickness: auto">soporte@instoreview.com</a>
+                    </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- info -->
+    <div class="container" style="background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    /* margin-left: 230px;
+    margin-right: 230px; */
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: left;
+    width: 100%">
+        <div class="row" style="box-sizing: border-box;
+        color: rgb(33, 37, 41);
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-top: 16px;
+        text-align: left">
+            <div class="col-12 text-center mb-5 mt-3" style="box-sizing: border-box;
+            color: rgb(33, 37, 41);
+            flex-basis: 100%;
+            flex-grow: 0;
+            flex-shrink: 0;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-bottom: 48px;
+            margin-top: 16px;
+            min-height: 1px;
+            position: relative;
+            text-align: center;
+            width: 100%;
+            -moz-box-flex: 0">
+                <h1 style="box-sizing: border-box;
+                color: rgb(33, 37, 41);
+                font-size: 40px;
+                font-weight: 500;
+                line-height: 48px;
+                margin-bottom: 8px;
+                margin-top: 0px;
+                text-align: center">Reporte Diario Ventas Sell-Out</h1>
+            </div>
+        </div>
+        <div class="row mt-3" style="box-sizing: border-box;
+        color: rgb(33, 37, 41);
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-top: 16px;
+        text-align: left;
+        width: 100%;">
+            <!-- ajustando cabecera -->
+            <table style="font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            background-color: white; 
+            width: 100%;">
+                <tr>
+                    <td style="width: 60%;">
+                        <table style="font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+                            width: 100%;">
+                            <tr>
+                                <td>
+                                    <div class="col-4" style="box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    flex-basis: 33.3333%;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    /* max-width: 33.3333%; */
+                    min-height: 1px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    position: relative;
+                    text-align: center;
+                    /* width: 190px; */
+                    -moz-box-flex: 0">
+                                    Vta. Mes En Curso
+                                    <br>
+                                    <span class="font-weight-bold" style="box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        text-align: center">$ {{ total_sales_current_month }}</span>
+                                </div>
+                                </td>
+                                <td>
+                                    <div class="col-4" style="box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    flex-basis: 33.3333%;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    /* max-width: 33.3333%; */
+                    min-height: 1px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    position: relative;
+                    text-align: center;
+                    /* width: 190px; */
+                    -moz-box-flex: 0">
+                                    Creci. %
+                                    <br>
+                                    {% if total_growth < 0 %} <span style="box-sizing: border-box;
+                        color: rgb(220, 53, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        text-align: center"> {{ total_growth }}%</span>
+                                        {% else %}
+                                        <span style="box-sizing: border-box;
+                        color: rgb(40, 167, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        text-align: center"> {{ total_growth }}%</span>
+                                        {% endif %}
+                                </div>
+                                </td>
+                                <td>
+                                    <div class="col-4" style="box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    flex-basis: 33.3333%;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    /* max-width: 33.3333%; */
+                    min-height: 1px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    position: relative;
+                    text-align: center;
+                    /* width: 190px; */
+                    -moz-box-flex: 0">
+                                    Variación
+                                    <br>
+                                    {% if total_growth < 0 %} <span style="box-sizing: border-box;
+                        color: rgb(220, 53, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        text-align: center">$ {{ total_variation }}</span>
+                                        {% else %}
+                                        <span style="box-sizing: border-box;
+                        color: rgb(40, 167, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        text-align: center">$ {{ total_variation }}</span>
+                                        {% endif %}
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="col-4" style="box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    flex-basis: 33.3333%;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    /* max-width: 33.3333%; */
+                    min-height: 1px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    position: relative;
+                    text-align: center;
+                    /* width: 190px; */
+                    -moz-box-flex: 0">
+                                    Vta. Perdida
+                                    <br>
+                                    <span class="font-weight-bold text-danger" style="box-sizing: border-box;
+                        color: rgb(220, 53, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        text-align: center">$ {{ total_lost }}</span>
+                                </div>
+                                </td>
+                                <td>
+                                    <div class="col-4" style="box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    flex-basis: 33.3333%;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    /* max-width: 33.3333%; */
+                    min-height: 1px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    position: relative;
+                    text-align: center;
+                    /* width: 190px; */
+                    -moz-box-flex: 0">
+                                    Vta. Proy. Mes
+                                    <br>
+                                    <span class="font-weight-bold" style="box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        text-align: center">$ {{ total_projection }}</span>
+                                </div>
+                                </td>
+                                <td>
+                                    <div class="col-4" style="box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    flex-basis: 33.3333%;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    /* max-width: 33.3333%; */
+                    min-height: 1px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    position: relative;
+                    text-align: center;
+                    /* width: 190px; */
+                    -moz-box-flex: 0">
+                                    D. Inventario
+                                    <br>
+                                    <span class="font-weight-bold" style="box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        text-align: center">{{ total_stock_days }}</span>
+                                </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- aqui -->
+                    </td>
+                    <td style="width: 40%;">
+                        <!-- tabla fechas -->
+                        <h5 class="text-center text-primary" style="box-sizing: border-box;
+                color: rgb(0, 123, 255);
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 24px;
+                margin-bottom: 8px;
+                margin-top: 0px;
+                text-align: center">Actualizacion B2B</h5>
+                        <table class="table text-center" style="font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            background-color: white;
+            border-collapse: collapse;
+            box-sizing: border-box;
+            color: rgb(33, 37, 41);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-bottom: 16px;
+            text-align: center;
+            background-color: white;
+            width: 100%;">
+                            <thead style="font-weight: 400;">
+                                <tr>
+                                    <th class="font-weight-bold">Cliente</th>
+                                    <th class="font-weight-bold">Fecha Venta</th>
+                                </tr>
+                            </thead>
+                            <tbody style="background-color: lightgray;">
+                                {% for item in last_updates %}
+                                <tr>
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.lastUpdate }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!-- fin tabla fechas -->
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <!-- table -->
+    <div class="container" style="background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    width: 100%">
+        <!-- table 1 -->
+        <div class="row" style="font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        box-sizing: border-box;
+        color: rgb(33, 37, 41);
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        width: 100%;">    
+            <h3 style="background-color: rgb(6, 44, 72);
+            box-sizing: border-box;
+            color: rgb(255, 255, 255);
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 33.6px;
+            margin-bottom: 8px;
+            margin-top: 0px;
+            text-align: center;
+            width: 100%;">Venta mes en curso</h3>
+        </div>
+        <div class="row" style="box-sizing: border-box;
+        color: rgb(33, 37, 41);
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        width: 100%;">
+            <table class="table" style="font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            background-color: rgba(0, 0, 0, 0);
+            border-collapse: collapse;
+            box-sizing: border-box;
+            color: rgb(33, 37, 41);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-bottom: 16px;
+            text-align: left;
+            width: 100%;
+            background-color: white;">
+                <thead style="border-collapse: collapse;
+                box-sizing: border-box;
+                color: rgb(33, 37, 41);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                text-align: left">
+                    <tr style="border-collapse: collapse;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    text-align: left">
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom"></th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Vta. Mes En Curso</th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Vta. Comparable </th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Variación</th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Creci. %</th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Vta. Perdida</th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Vta. Proy. Mes</th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">D. Inventario</th>
+                    </tr>
+                </thead>
+                <tbody style="border-collapse: collapse;
+                box-sizing: border-box;
+                color: rgb(33, 37, 41);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                text-align: left">
+                    <!-- details -->
+                    {% for data in report_chains %}
+                    {% if data.1 == 'TOTAL' %}
+                    <tr style="background-color: rgb(184, 218, 255);
+                    border-collapse: collapse;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 24px;
+                    text-align: left">
+                        <td style="border-collapse: collapse;
+                    border-top-color: rgb(222, 226, 230);
+                    border-top-style: solid;
+                    border-top-width: 1px;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    line-height: 24px;
+                    padding-bottom: 12px;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                    padding-top: 12px;
+                    text-align: left;
+                    vertical-align: top">{{ data.1 }} - {{ data.0 }}</th>
+                            {% else %}
+                    <tr style="border-collapse: collapse;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    text-align: left">
+                        <td style="border-collapse: collapse;
+                    border-top-color: rgb(222, 226, 230);
+                    border-top-style: solid;
+                    border-top-width: 1px;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    line-height: 24px;
+                    padding-bottom: 12px;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                    padding-top: 12px;
+                    text-align: left;
+                    vertical-align: top">{{ data.0 }} - {{ data.1 }}</td>
+                        {% endif %}
+                        <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.2 }}</td>
+                        <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.3 }}</td>
+                        {% if data.5 < 0 %} <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(220, 53, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.4 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(220, 53, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">{{ data.5 | floatformat:1 }}%</td>
+                            {% elif data.5 > 0 %}
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(40, 167, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.4 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(40, 167, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">{{ data.5 | floatformat:1 }}%</td>
+                            {% elif data.3 == 0 %}
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(40, 167, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.4 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(40, 167, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">100%</td>
+                            {% else %}
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.4 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">{{ data.5 | floatformat:1 }}%</td>
+                            {% endif %}
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.6 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.7 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">{{ data.10 | floatformat:1 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container" style="background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    width: 100%">
+        <!-- table 2 -->
+        <div class="row" style="box-sizing: border-box;
+        color: rgb(33, 37, 41);
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        width: 100%;">
+            <h3 style="background-color: rgb(6, 44, 72);
+            box-sizing: border-box;
+            color: rgb(255, 255, 255);
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 33.6px;
+            margin-bottom: 8px;
+            margin-top: 0px;
+            text-align: center;
+            width: 100%;">Venta mes en curso</h3>
+        </div>
+        <div class="row" style="box-sizing: border-box;
+        color: rgb(33, 37, 41);
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        width: 100%;">            
+            <table class="table" style="font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            background-color: white;
+            border-collapse: collapse;
+            box-sizing: border-box;
+            color: rgb(33, 37, 41);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-bottom: 16px;
+            text-align: left;
+            width: 100%;">
+                <thead style="border-collapse: collapse;
+                box-sizing: border-box;
+                color: rgb(33, 37, 41);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                text-align: left">
+                    <tr style="border-collapse: collapse;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    text-align: left">
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom"></th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Vta. Mes En Curso</th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Vta. Comparable</th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Variación</th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Creci. %</th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Vta. Perdida</th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">Vta. Proy. Mes</th>
+                        <th scope="col" style="background-color: rgb(255, 255, 255);
+                        border-bottom-color: rgb(222, 226, 230);
+                        border-bottom-style: solid;
+                        border-bottom-width: 2px;
+                        border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: bottom">D. Inventario</th>
+                    </tr>
+                </thead>
+                <tbody style="border-collapse: collapse;
+                box-sizing: border-box;
+                color: rgb(33, 37, 41);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                text-align: left">
+                    <!-- details -->
+                    {% for data in report_trademarks %}
+                    {% if data.1 == 'TOTAL' %}
+                    <tr style="background-color: rgb(184, 218, 255);
+                    border-collapse: collapse;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 24px;
+                    text-align: left">
+                        <td style="border-collapse: collapse;
+                    border-top-color: rgb(222, 226, 230);
+                    border-top-style: solid;
+                    border-top-width: 1px;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    line-height: 24px;
+                    padding-bottom: 12px;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                    padding-top: 12px;
+                    text-align: left;
+                    vertical-align: top">{{ data.1 }} - {{ data.0 }}</th>
+                            {% else %}
+                    <tr style="border-collapse: collapse;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    text-align: left">
+                        <td style="border-collapse: collapse;
+                    border-top-color: rgb(222, 226, 230);
+                    border-top-style: solid;
+                    border-top-width: 1px;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    line-height: 24px;
+                    padding-bottom: 12px;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                    padding-top: 12px;
+                    text-align: left;
+                    vertical-align: top">{{ data.0 }} - {{ data.1 }}</td>
+                        {% endif %}
+                        <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.2 }}</td>
+                        <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.3 }}</td>
+                        {% if data.5 < 0 %} <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(220, 53, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.4 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(220, 53, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">{{ data.5 | floatformat:1 }}%</td>
+                            {% elif data.5 > 0 %}
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(40, 167, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.4 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(40, 167, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">{{ data.5 | floatformat:1 }}%</td>
+                            {% elif data.3 == 0 %}
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(40, 167, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.4 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 0.8px;
+                        box-sizing: border-box;
+                        color: rgb(40, 167, 69);
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">100%</td>
+                            {% else %}
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.4 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">{{ data.5 | floatformat:1 }}%</td>
+                            {% endif %}
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.6 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">$ {{ data.7 }}</td>
+                            <td style="border-collapse: collapse;
+                        border-top-color: rgb(222, 226, 230);
+                        border-top-style: solid;
+                        border-top-width: 1px;
+                        box-sizing: border-box;
+                        color: rgb(33, 37, 41);
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                        padding-top: 12px;
+                        text-align: left;
+                        vertical-align: top">{{ data.10 | floatformat:1 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left">
+        <div class="container py-4 mt-3" style="background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+        color: rgb(33, 37, 41);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-top: 16px;
+        padding-bottom: 24px;
+        padding-top: 24px;
+        text-align: left;
+        width:100%">
+            <!-- tabla pie -->
+            <table style="font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            background-color: white;
+            width: 100%;">
+                <tr>
+                    <td>
+                        <img src="https://download-zones.s3.amazonaws.com/logo.png" alt="Logo" style="border-bottom-style: none;
+                    border-left-style: none;
+                    border-right-style: none;
+                    border-top-style: none;
+                    box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    text-align: left;
+                    vertical-align: middle">
+                    </td>
+                    <td>
+                        <p style="box-sizing: border-box;
+                    color: rgb(33, 37, 41);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    margin-bottom: 16px;
+                    margin-top: 0px;
+                    text-align: right">{{ now }}
+                        <br>
+                        <a href="mailto:soporte@instoreview.com" style="background-color: rgba(0, 0, 0, 0);
+                        box-sizing: border-box;
+                        color: rgb(0, 123, 255);
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 24px;
+                        text-align: right;
+                        text-decoration-color: rgb(0, 123, 255);
+                        text-decoration-line: none;
+                        text-decoration-style: solid;
+                        text-decoration-thickness: auto">soporte@instoreview.com</a>
+                    </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

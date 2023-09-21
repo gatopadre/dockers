@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: testing
+    working_dir: /home/app
+    container_name: reporte-b2b
+    volumes:
+      - .:/home/app
+    ports:
+      - 8000:8000
+    environment:
+      DEBUG: "true"
+    networks:
+      - testing-network
+    tty: true
+    # command: bash -c "/etc/init.d/postgresql start && python3 manage.py runserver 0.0.0.0:8000"
+networks:
+  testing-network:
+    driver: bridge

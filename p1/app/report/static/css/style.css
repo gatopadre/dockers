@@ -1,0 +1,17 @@
+body {
+    background-color: #F5F5F5;
+}
+
+.container {
+    background-color: #FFFFFF;
+}
+
+
+.table thead th {
+    background-color: #FFF;
+}
+
+h3 {
+    background-color: #062C48;
+    color: #FFFFFF;
+}
